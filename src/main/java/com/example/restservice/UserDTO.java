@@ -17,4 +17,10 @@ public class UserDTO {
         this.email = email;
         this.fullName = fullName;
     }
+
+    public UserDTO(User user){
+        id = user.getId();
+        email = user.getEmail();
+        fullName = user.getFullName();
+    }
 }

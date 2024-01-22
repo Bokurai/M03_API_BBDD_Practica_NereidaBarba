@@ -13,7 +13,7 @@ public class UserController {
 
     public List<UserDTO> readAll() {
         List<UserDTO> userDTOS;
-        userDTOS = userService.readAllUsers();
+        userDTOS = userService.readAllUsers().stream().map(UserDTO::new).toList();
         return userDTOS;
     }
 }
