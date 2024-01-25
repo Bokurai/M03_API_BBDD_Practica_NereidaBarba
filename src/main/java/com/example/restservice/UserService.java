@@ -14,4 +14,16 @@ public class UserService {
     public List<User> readAllUsers() {
         return userDAO.findAll();
     }
+
+    public User getUserById(Integer id) {
+        return userDAO.findById(id).orElse(null);
+    }
+
+    public User addUser(User user) {
+        return  userDAO.save(user);
+    }
+
+    public User deleteUser(User user) {
+        return userDAO.delete();
+    }
 }

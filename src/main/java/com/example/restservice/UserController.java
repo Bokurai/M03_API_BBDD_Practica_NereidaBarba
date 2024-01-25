@@ -16,4 +16,16 @@ public class UserController {
         userDTOS = userService.readAllUsers().stream().map(UserDTO::new).toList();
         return userDTOS;
     }
+
+    public UserDTO getUserById(Integer id) {
+        return new UserDTO(userService.getUserById(id));
+    }
+
+    public UserDTO addUser(User user) {
+       return new UserDTO(userService.addUser(user));
+    }
+
+    public UserDTO deleteUser(User user) {
+        return new UserDTO(userService.deleteUser(user));
+    }
 }
