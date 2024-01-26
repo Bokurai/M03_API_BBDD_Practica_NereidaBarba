@@ -36,9 +36,10 @@ public class UserResource {
         return ResponseEntity.ok(userController.addUser(user));
     }
 
-    @DeleteMapping
-    public ResponseEntity<UserDTO> deleteUser(@PathVariable Integer id){
-        return ResponseEntity.ok(userController.getUserById(id));
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable Integer id){
+        userController.deleteUser(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

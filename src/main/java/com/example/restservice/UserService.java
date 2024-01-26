@@ -23,7 +23,7 @@ public class UserService {
         return  userDAO.save(user);
     }
 
-    public User deleteUser(User user) {
-        return userDAO.delete();
+    public void deleteUser(Integer id) {
+         userDAO.deleteById(id);
     }
 }

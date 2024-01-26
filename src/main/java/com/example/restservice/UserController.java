@@ -25,7 +25,7 @@ public class UserController {
        return new UserDTO(userService.addUser(user));
     }
 
-    public UserDTO deleteUser(User user) {
-        return new UserDTO(userService.deleteUser(user));
+    public void deleteUser(Integer id) {
+        userService.deleteUser(id);
     }
 }
