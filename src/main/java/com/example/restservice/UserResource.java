@@ -1,5 +1,6 @@
 package com.example.restservice;
 
+import com.github.fge.jsonpatch.JsonPatch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,4 +43,13 @@ public class UserResource {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDTO> modifyUser(@RequestBody User user, @PathVariable Integer id){
+        return
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<UserDTO> patchUser (@PathVariable Integer id, @RequestBody JsonPatch jsonPatch){
+        return
+    }
 }

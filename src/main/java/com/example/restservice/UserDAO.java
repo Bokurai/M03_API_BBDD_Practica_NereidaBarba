@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface UserDAO extends JpaRepository<User,Integer> {
     List<User> findAll();
+
+    User delete();
 }
