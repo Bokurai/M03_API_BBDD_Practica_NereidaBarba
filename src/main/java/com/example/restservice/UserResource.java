@@ -45,11 +45,11 @@ public class UserResource {
 
     @PutMapping("/{id}")
     public ResponseEntity<UserDTO> modifyUser(@RequestBody User user, @PathVariable Integer id){
-        return
+        return ResponseEntity.ok(userController.modifyUser(user,id));
     }
 
     @PatchMapping("/{id}")
     public ResponseEntity<UserDTO> patchUser (@PathVariable Integer id, @RequestBody JsonPatch jsonPatch){
-        return
+        return ;
     }
 }
