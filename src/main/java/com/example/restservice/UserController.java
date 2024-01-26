@@ -28,4 +28,8 @@ public class UserController {
     public void deleteUser(Integer id) {
         userService.deleteUser(id);
     }
+
+    public UserDTO modifyUser(User user, Integer id) {
+        return new UserDTO(userService.modifyUser(user,id));
+    }
 }
