@@ -50,6 +50,6 @@ public class UserResource {
 
     @PatchMapping("/{id}")
     public ResponseEntity<UserDTO> patchUser (@PathVariable Integer id, @RequestBody JsonPatch jsonPatch){
-        return ;
+        User user = UserDAO.findOne();
     }
 }
