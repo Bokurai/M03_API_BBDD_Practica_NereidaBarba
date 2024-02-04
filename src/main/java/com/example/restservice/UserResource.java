@@ -19,7 +19,7 @@ public class UserResource {
     @Autowired
     UserController userController;
 
-    @GetMapping
+    @GetMapping("/users")
     public ResponseEntity<List<UserDTO>> users() {
        return new ResponseEntity<>(userController.readAll(), HttpStatus.OK);
     }

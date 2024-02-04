@@ -1,5 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://
-    username: usuari
-    password: usuari
+    url: jdbc:postgresql://172.31.206.17/springpractica
+    username: usuario
+    password: usuario
+    driver-class-name: org.postgresql.Driver
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        ddl-auto: update
+      show-sql: true
