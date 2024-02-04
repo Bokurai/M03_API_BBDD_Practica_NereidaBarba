@@ -1,6 +1,8 @@
 package com.example.restservice;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.fge.jsonpatch.JsonPatch;
+import com.github.fge.jsonpatch.JsonPatchException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +51,7 @@ public class UserResource {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<UserDTO> patchUser (@PathVariable Integer id, @RequestBody JsonPatch jsonPatch){
-        User user = UserDAO.findOne();
+    public ResponseEntity<UserDTO> patchUser (@PathVariable Integer id, @RequestBody JsonPatch jsonPatch) throws JsonProcessingException, JsonPatchException {
+        return ResponseEntity.ok(userController.patchUser(id, jsonPatch));
     }
 }

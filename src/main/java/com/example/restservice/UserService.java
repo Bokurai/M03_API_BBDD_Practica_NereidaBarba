@@ -27,7 +27,11 @@ public class UserService {
          userDAO.deleteById(id);
     }
 
-    public User modifyUser(User user, Integer id) {
+    public User modifyUser(User user) {
        return userDAO.save(user);
+    }
+
+    public User updateUser(User userMod) {
+        return userDAO.save(userMod);
     }
 }
